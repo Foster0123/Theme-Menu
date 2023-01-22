@@ -1,7 +1,9 @@
 :root {
-	--menu-bg-color:rgba(0,0,0,0.8);
+	--menu-bg-color:linear-gradient(45deg, pink, teal);
 	--theme-bg-color:rgba(0,0,0,0.2);
+	--theme-bg-color-on-hover:rgba(0,0,0,0.7);
 	--default-text-color:white;
+	--current-theme-bg-color: darkkhaki;
 }
 * {
 	margin: 0;
@@ -13,23 +15,66 @@ html, body {
 	width: 100%;
 }
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+}
+
+.navbar {
+	width: 100%;
+	background-color: red;
+	height: 50px;
+	position: relative;
 }
 .theme-menu {
+	position: absolute;
+	top:7px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+.current-theme {
+	color: white;
+	background:none;
+	border:none;
+	outline: none;
+	text-align: right;
+	padding: 5px;
+	margin-bottom: 12.5px;
+	border-radius: 5px;
+	transition: background-color, 100ms ease-in-out;
+	cursor: pointer;
+	&:hover {
+		background-color: var(--current-theme-bg-color);
+		transition: background-color, 100ms ease-in-out;
+	}
+	i {
+		font-size: 1.8em;
+		color: inherit;
+		border-radius: inherit;
+	}
+}
+.display {
+	opacity: 1!important;
+}
+.themes-section {
+	opacity: 0;
+	transition: opacity, 100ms ease-in-out;
+}
+.themes {
 	backdrop-filter:blur(5px);
 	width: 125px;
-	height: 135px;
-	padding: 10px;
+	height: 120px;
 	color: var(--default-text-color);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	border-radius: 5px;
+	padding: 7px;
 	position: relative;
-	background-color: var(--menu-bg-color);
+	visibility: visible;
+	transition: visibility, 100ms ease-in-out;
 	&::after {
 		content: '';
 		position: absolute;
@@ -39,39 +84,56 @@ body {
 		height: 100%;
 		z-index: -1;
 		border-radius: inherit;
-		background:linear-gradient(45deg, pink, rebeccapurple);
+		background:var(--menu-bg-color);
 	}
 	.theme {
 		display: grid;
 		grid-template-areas: "theme-icon theme-text";
-		grid-template-columns: 25px 1fr;
+		grid-template-columns: 30px 1fr;
 		align-items: center;
 		padding: 5px 5px;
 		background-color: var(--theme-bg-color);
 		cursor: pointer;
 		border-radius: 5px;
 		width: 100%;
-		backdrop-filter:blur(5px);
+		&:nth-child(2) {
+			margin-top: 0px;
+		}
+		&:hover {
+			background-color: var(--theme-bg-color-on-hover);
+		}
 		p.theme-text {
 			grid-area: theme-text;
 			font-family: "Open Sans", sans-serif;
 			font-weight: bolder;
-			font-size: 1.1em;
-			margin-bottom: 2px;
+			font-size: 1em;
+			padding-bottom: 1.5px;
 		}
 		i.theme-icon {
 			grid-area: theme-icon;
 			margin-right: 5px;
 			height: 20px;
+			width: 20px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			position: relative;
+			color: lightyellow;
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 		}
-		.fa-sun {
-			font-size: 1.1em;
-		}
-		.fa-moon {
+		.bi-display {
 			font-size: 1.3em;
+		}
+		.bi-sun-fill {
+			font-size: 1.4em;
+		}
+		.bi-moon-stars-fill {
+			font-size: 1.2em;
 		}
 	}
 }

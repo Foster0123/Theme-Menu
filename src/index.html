@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -11,20 +11,28 @@
 		<title>Theme 2.0</title>
 	</head>
 	<body>
-		<section class="theme-menu">
-			<article class="system-theme theme">
-				<i class="fa-solid fa-display theme-icon"></i>
-				<p class="theme-text">System</p>
-			</article>
-			<article class="system-theme theme">
-				<i class="fa-solid fa-sun theme-icon"></i>
-				<p class="theme-text">Light</p>
-			</article>
-			<article class="system-theme theme">
-				<i class="fa-solid fa-moon theme-icon"></i>
-				<p class="theme-text">Dark</p>
-			</article>
-		</section>
+		<nav class="navbar"></nav>
+		<aside class="theme-menu">
+			<button class="current-theme" id="current-theme">
+				<i class="fa-solid bi bi-display"></i>
+			</button>
+			<section class="themes-section" id="themes-section">
+				<div class="themes">
+					<article class="system-theme theme">
+						<i class="bi-display theme-icon"></i>
+						<p class="theme-text">System</p>
+					</article>
+					<article class="system-theme theme">
+						<i class="bi bi-sun-fill theme-icon"></i>
+						<p class="theme-text">Light</p>
+					</article>
+					<article class="system-theme theme">
+						<i class="bi bi-moon-stars-fill theme-icon"></i>
+						<p class="theme-text">Dark</p>
+					</article>
+				</div>
+			</section>
+		</aside>
 		<script src="./js/main.js"></script>
 	</body>
 </html>
