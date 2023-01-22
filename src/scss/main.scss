@@ -1,0 +1,77 @@
+:root {
+	--menu-bg-color:rgba(0,0,0,0.8);
+	--theme-bg-color:rgba(0,0,0,0.2);
+	--default-text-color:white;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.theme-menu {
+	backdrop-filter:blur(5px);
+	width: 125px;
+	height: 135px;
+	padding: 10px;
+	color: var(--default-text-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	position: relative;
+	background-color: var(--menu-bg-color);
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		border-radius: inherit;
+		background:linear-gradient(45deg, pink, rebeccapurple);
+	}
+	.theme {
+		display: grid;
+		grid-template-areas: "theme-icon theme-text";
+		grid-template-columns: 25px 1fr;
+		align-items: center;
+		padding: 5px 5px;
+		background-color: var(--theme-bg-color);
+		cursor: pointer;
+		border-radius: 5px;
+		width: 100%;
+		backdrop-filter:blur(5px);
+		p.theme-text {
+			grid-area: theme-text;
+			font-family: "Open Sans", sans-serif;
+			font-weight: bolder;
+			font-size: 1.1em;
+			margin-bottom: 2px;
+		}
+		i.theme-icon {
+			grid-area: theme-icon;
+			margin-right: 5px;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.fa-sun {
+			font-size: 1.1em;
+		}
+		.fa-moon {
+			font-size: 1.3em;
+		}
+	}
+}

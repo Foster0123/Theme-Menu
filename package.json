@@ -1,0 +1,18 @@
+{
+  "name": "theme-menu",
+  "version": "1.0.0",
+  "description": "Theme Toggle From DropDown Menu",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Foss",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.1",
+    "vite": "^4.0.4"
+  }
+}
